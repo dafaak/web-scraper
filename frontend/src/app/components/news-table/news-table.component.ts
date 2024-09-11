@@ -39,7 +39,7 @@ export class NewsTableComponent implements OnInit {
     if (this.hackerNews$)
       this.hackerNews$ = this.hackerNews$.pipe(
         map(news => {
-          const newsFilterByTitle = news.filter(item => item.title.split(' ').length > 5);
+          const newsFilterByTitle = news.filter(item => item.title.split(' ').length >= 5);
           return newsFilterByTitle.sort((a, b) => b.numberOfComments - a.numberOfComments);
         })
       )
@@ -51,7 +51,7 @@ export class NewsTableComponent implements OnInit {
     if (this.hackerNews$)
       this.hackerNews$ = this.hackerNews$.pipe(
         map(news => {
-          const newsFilterByTitle = news.filter(item => item.title.split(' ').length < 5);
+          const newsFilterByTitle = news.filter(item => item.title.split(' ').length <= 5);
           return newsFilterByTitle.sort((a, b) => b.points - a.points);
         })
       )
