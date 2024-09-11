@@ -10,8 +10,8 @@ export class HackerNewsController {
   }
 
   getNews = (req: Request, res: Response) => {
-    this.hackerNewsScraper.fetchHtml().then(
-        html => res.json({html})
+    this.hackerNewsScraper.getNews().then(
+        news => res.json(news)
     ).catch(
         error => res.status(500).json({error: error.message})
     );

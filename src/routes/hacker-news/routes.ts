@@ -5,7 +5,7 @@ import { HackerNewsScraper } from "../../models/hacker-news-scraper";
 export class HackerNewsRoutes {
   static get routes(): Router {
     const router = Router();
-    const hackerNewsScraper = new HackerNewsScraper('https://news.ycombinator.coms/')
+    const hackerNewsScraper = new HackerNewsScraper('https://news.ycombinator.com/')
     const controller = new HackerNewsController(hackerNewsScraper);
 
     router.get('/', controller.getNews);
