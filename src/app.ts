@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import { AppRoutes } from "./routes/routes"
 
 const app = express();
