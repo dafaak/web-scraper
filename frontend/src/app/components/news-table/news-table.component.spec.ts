@@ -36,6 +36,7 @@ describe('NewsTableComponent', () => {
   it('should filter and sort news by number of comments and length of title  greater than 5', () => {
     const mockNews: HackerNewsInterface[] = [
       {title: 'Short title ', numberOfComments: 10, number: 1, points: 12},
+      {title: 'Short title with five words', numberOfComments: 10, number: 1, points: 12},
       {title: 'This is a much longer title with many words', numberOfComments: 5, number: 1, points: 12},
       {title: 'Another longer title with a lot of words', numberOfComments: 15, number: 1, points: 12}
     ];
@@ -67,9 +68,10 @@ describe('NewsTableComponent', () => {
     });
   })
 
-  it('should filter and sort news by points and length of title  less than 5', () => {
+  it('should filter and sort news by points and length of title  less than or equal to 5', () => {
     const mockNews: HackerNewsInterface[] = [
       {title: 'Short title ', numberOfComments: 10, number: 1, points: 12},
+      {title: 'Short title with five words', numberOfComments: 10, number: 1, points: 9},
       {title: 'This is a much longer title with many words', numberOfComments: 5, number: 1, points: 12},
       {title: 'Another longer title with a lot of words', numberOfComments: 15, number: 1, points: 12}
     ];
@@ -79,8 +81,9 @@ describe('NewsTableComponent', () => {
 
     expect(component.hackerNews$).toBeTruthy();
     component.hackerNews$?.subscribe(filteredNews => {
-      expect(filteredNews.length).toBe(1);
+      expect(filteredNews.length).toBe(2);
       expect(filteredNews[0].points).toBe(12);
+      expect(filteredNews[1].points).toBe(9);
     });
   });
 
