@@ -1,0 +1,43 @@
+<div class="table">
+
+  <div>
+    <p-button
+      hideDelay="300"
+      showDelay="500"
+      pTooltip="Filter all previous entries with more than five words in the title ordered by the number of comments first."
+      (click)="filterByNumberOfComments()">Filter by comments
+    </p-button>
+    <p-button
+      hideDelay="300"
+      showDelay="500"
+      pTooltip="Filter all previous entries with less than or equal to five words in the title ordered by points."
+      (click)="filterByPoints()">Filter by points
+    </p-button>
+    <p-button (click)="getNews()">Reset</p-button>
+  </div>
+
+
+  <p-table responsiveLayout="stack" [breakpoint]="'500px'" [columns]="cols" [value]="(hackerNews$|async)||[]"
+           [tableStyle]="{  'max-width':'970px' }">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          <span class="p-column-title">{{ col.header }}</span> {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5">No news found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>
