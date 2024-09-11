@@ -33,3 +33,18 @@
 body {
   background-color: lightgrey;
 }
+
+
+
+.table {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+  div {
+    display:flex;
+    align-content: space-around;
+  }
+}
