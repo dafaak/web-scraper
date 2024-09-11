@@ -1,7 +1,6 @@
 import axios from "axios";
 import { HackerNews } from "./hacker-news";
 import { HacekerNewsInterface } from "../routes/hacker-news/interfaces/haceker-news.interface";
-import { HACKER_NEWS_HTML } from "../../tests/mocks/hacker-news-html";
 
 export class HackerNewsScraper {
   private readonly url: string;
