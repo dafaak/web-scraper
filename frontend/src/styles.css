@@ -35,7 +35,6 @@ body {
 }
 
 
-
 .table {
   display: flex;
   justify-content: center;
@@ -43,8 +42,19 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   align-content: space-around;
+
   div {
-    display:flex;
-    align-content: space-around;
+    display: flex;
+    justify-content: flex-end;
+
+    p-button {
+      margin: 10px
+
+    }
+
+    p-button:last-child {
+      margin: 10px 0px 10px 10px;
+
+    }
   }
 }
