@@ -2,6 +2,7 @@ import axios from "axios";
 import { HackerNews } from "./hacker-news";
 import { HacekerNewsInterface } from "../routes/hacker-news/interfaces/haceker-news.interface";
 
+
 export class HackerNewsScraper {
   private readonly url: string;
 
@@ -60,7 +61,6 @@ export class HackerNewsScraper {
     }
 
     if (commentsMatch) hackerNews['numberOfComments'] = +commentsMatch;
-
     return hackerNews;
   }
 
