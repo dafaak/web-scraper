@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --darkGrayishBlue50: #c9dcb3;
+  --blue500: #555358;
+  --yellow500: #c6ca53;
+  --darkGrayishBlue200: #7b7263;
+}
+
+.header {
+  background-color: white;
+  font-size: small;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: var(--blue500);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    margin-right: 25px;
+  }
+}
+
+body {
+  background-color: lightgrey;
+}
